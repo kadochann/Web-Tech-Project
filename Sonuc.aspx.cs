@@ -1,18 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
 namespace Project
 {
-    public partial class Sonuc : System.Web.UI.Page
+    public partial class Sonuc : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["KullaniciId"] == null)
-            {
-                Session["KullaniciId"] = 1;
-            }
-
             if (!IsPostBack)
             {
                 CalculateResult();

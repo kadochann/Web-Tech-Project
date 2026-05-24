@@ -1,25 +1,13 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Web.UI.WebControls;
 
 namespace Project
 {
-    public partial class SinavBasla : System.Web.UI.Page
+    public partial class SinavBasla : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Login sayfası henüz hazır değilse test için bunu geçici olarak kapatabilirsin.
-            // Normalde açık kalmalı.
-            if (Session["KullaniciId"] == null)
-            {
-                // Test ederken giriş sistemi yoksa aşağıdaki 2 satırı yorum satırı yapabilirsin.
-                // Response.Redirect("Login.aspx");
-                // return;
-
-                // Geçici test kullanıcısı:
-                Session["KullaniciId"] = 1;
-            }
-
             if (!IsPostBack)
             {
                 LoadCategories();

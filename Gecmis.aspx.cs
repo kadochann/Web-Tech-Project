@@ -1,21 +1,16 @@
-﻿using System;
+using System;
 using System.Data;
 using System.Web.Script.Serialization;
 
 namespace Project
 {
-    public partial class Gecmis : System.Web.UI.Page
+    public partial class Gecmis : BasePage
     {
         public string ChartLabelsJson { get; set; } = "[]";
         public string ChartValuesJson { get; set; } = "[]";
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["KullaniciId"] == null)
-            {
-                Session["KullaniciId"] = 1;
-            }
-
             if (!IsPostBack)
             {
                 LoadHistory();

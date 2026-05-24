@@ -1,4 +1,4 @@
-<%@ Page Title="Soru Listesi" Language="C#" MasterPageFile="~/MasterPage.Master"
+<%@ Page Title="Soru Listesi" Language="C#" MasterPageFile="~/Site.Master"
     AutoEventWireup="true" CodeFile="SoruListe.aspx.cs" Inherits="Admin_SoruListe" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">

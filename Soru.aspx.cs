@@ -1,20 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Web.UI.WebControls;
 
 namespace Project
 {
-    public partial class Soru : System.Web.UI.Page
+    public partial class Soru : BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["KullaniciId"] == null)
-            {
-                // Test aşamasında login yoksa geçici kullanıcı veriyoruz.
-                Session["KullaniciId"] = 1;
-            }
-
             if (!IsPostBack)
             {
                 if (Session["Sorular"] == null)

@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Project.SiteMaster" %>
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Project.SiteMaster" %>
 
 <!DOCTYPE html>
 <html lang="tr">
@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
 
-                <a class="navbar-brand fw-bold" href="Default.aspx">
+                <a class="navbar-brand fw-bold" runat="server" href="~/Default.aspx">
                     <asp:Literal runat="server" Text="<%$ Resources:Resources, SiteTitle %>" />
                 </a>
 
@@ -38,7 +38,7 @@
 
                         <%-- Ana Sayfa - herkes gorur --%>
                         <li class="nav-item">
-                            <a class="nav-link" href="Default.aspx">
+                            <a class="nav-link" runat="server" href="~/Default.aspx">
                                 <asp:Literal runat="server" Text="<%$ Resources:Resources, Home %>" />
                             </a>
                         </li>
@@ -46,12 +46,12 @@
                         <%-- Kullanici menusu --%>
                         <asp:PlaceHolder ID="phUserMenu" runat="server" Visible="false">
                             <li class="nav-item">
-                                <a class="nav-link" href="SinavBasla.aspx">
+                                <a class="nav-link" runat="server" href="~/SinavBasla.aspx">
                                     <asp:Literal runat="server" Text="<%$ Resources:Resources, StartExam %>" />
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="Gecmis.aspx">
+                                <a class="nav-link" runat="server" href="~/Gecmis.aspx">
                                     <asp:Literal runat="server" Text="<%$ Resources:Resources, History %>" />
                                 </a>
                             </li>
@@ -60,7 +60,7 @@
                         <%-- Admin menusu --%>
                         <asp:PlaceHolder ID="phAdminMenu" runat="server" Visible="false">
                             <li class="nav-item">
-                                <a class="nav-link text-warning fw-semibold" href="Admin/SoruListe.aspx">
+                                <a class="nav-link text-warning fw-semibold" runat="server" href="~/Admin/SoruListe.aspx">
                                     <i class="bi bi-shield-lock"></i> Admin Panel
                                 </a>
                             </li>
@@ -95,7 +95,7 @@
                             ID="lnkLogin"
                             runat="server"
                             CssClass="btn btn-outline-light btn-sm"
-                            NavigateUrl="Login.aspx">
+                            NavigateUrl="~/Login.aspx">
                             <asp:Literal runat="server" Text="<%$ Resources:Resources, Login %>" />
                         </asp:HyperLink>
 
@@ -104,7 +104,7 @@
                             ID="lnkRegister"
                             runat="server"
                             CssClass="btn btn-light btn-sm"
-                            NavigateUrl="Register.aspx">
+                            NavigateUrl="~/Register.aspx">
                             <asp:Literal runat="server" Text="<%$ Resources:Resources, KayitOl %>" />
                         </asp:HyperLink>
 
@@ -139,7 +139,7 @@
 
     </form>
 
-    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src='<%= Page.ResolveUrl("~/Scripts/bootstrap.bundle.min.js") %>'></script>
 
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>

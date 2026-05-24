@@ -1,4 +1,4 @@
-<%@ Page Title="Kategori Yönetimi" Language="C#" MasterPageFile="~/MasterPage.Master"
+<%@ Page Title="Kategori Yönetimi" Language="C#" MasterPageFile="~/Site.Master"
     AutoEventWireup="true" CodeFile="KategoriYonet.aspx.cs" Inherits="Admin_KategoriYonet" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
